@@ -1,0 +1,7 @@
+{
+  "name": "craft_tools",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react-vite"
+}
