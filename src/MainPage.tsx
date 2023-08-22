@@ -1,5 +1,5 @@
 
-import { IonApp, IonButton, IonContent, IonHeader, IonInput, IonSearchbar, IonTitle } from '@ionic/react';
+import { IonApp, IonButton, IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle, IonContent, IonHeader, IonInput, IonSearchbar, IonTitle } from '@ionic/react';
 import React from 'react';
 
 import tools_lst from './tools/tools';
@@ -65,7 +65,32 @@ class MainPage extends React.Component<MyProps, MyState> {
                     {
                         search_result_render.map((elem) => elem)
                     }
+                
+                <div style={{display: 'grid', gridTemplateColumns: "repeat(3, 100fr)"}}>
+                
+                {
+                Array(10).fill(0).map((elem, idx) => {
+                    return (
+                    <IonCard key={idx}>
+                        <button onClick={(x)=>alert(idx)}>
+                        <IonCardHeader>
+                            <IonCardTitle>Card Title</IonCardTitle>
+                            <IonCardSubtitle>Card Subtitle</IonCardSubtitle>
+                        </IonCardHeader>
+
+                        <IonCardContent>Here's a small text description for the card content. Nothing more, nothing less.</IonCardContent>
+                        </button>
+                    </IonCard>
+                    )
+                })
+                }
+                
+                </div>
+                
+
                 </IonContent>
+
+                
             </>
         );
     }
